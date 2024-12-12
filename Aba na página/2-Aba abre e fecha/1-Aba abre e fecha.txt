@@ -1,0 +1,63 @@
+Você pode criar uma aba que abre e fecha com um clique usando HTML, CSS e JavaScript. Abaixo está um exemplo simples que faz isso:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aba Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tab-content {
+            display: none; /* Conteúdo escondido por padrão */
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleTab()">Clique para abrir/fechar a aba</button>
+
+    <div id="tabContent" class="tab-content">
+        <p>Este é o conteúdo da aba. Clique no botão novamente para esconder.</p>
+    </div>
+
+    <script>
+        function toggleTab() {
+            var content = document.getElementById("tabContent");
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block"; // Mostra o conteúdo
+            } else {
+                content.style.display = "none"; // Esconde o conteúdo
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
+### Explicação:
+- **HTML**: Define a estrutura da página com um botão (`button`) que dispara a função de alternar a aba, e uma `div` que contém o conteúdo da aba.
+- **CSS**: Estiliza o botão e a aba. Por padrão, o conteúdo da aba (`tab-content`) está oculto (`display: none`).
+- **JavaScript**: A função `toggleTab` é acionada quando o botão é clicado. Ela verifica o estado de exibição do conteúdo e alterna entre `block` (mostrar) e `none` (esconder).
+
+Essa combinação cria uma aba simples que pode ser aberta e fechada com um clique no botão.

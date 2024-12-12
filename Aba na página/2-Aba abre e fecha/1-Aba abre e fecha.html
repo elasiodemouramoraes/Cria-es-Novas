@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aba Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tab-content {
+            display: none; /* Conteúdo escondido por padrão */
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleTab()">Clique para abrir/fechar a aba</button>
+
+    <div id="tabContent" class="tab-content">
+        <p>Este é o conteúdo da aba. Clique no botão novamente para esconder.</p>
+    </div>
+
+    <script>
+        function toggleTab() {
+            var content = document.getElementById("tabContent");
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block"; // Mostra o conteúdo
+            } else {
+                content.style.display = "none"; // Esconde o conteúdo
+            }
+        }
+    </script>
+</body>
+</html>
