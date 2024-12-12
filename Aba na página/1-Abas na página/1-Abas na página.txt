@@ -1,0 +1,135 @@
+
+
+Criação de um sistema de navegação por abas, que abre com um clique em uma página web,
+onde é possível alternar entre diferentes seções de conteúdo sem recarregar a página. 
+
+*************************************************************************************
+
+
+Para criar uma aba que abre com um clique em uma página web, você pode usar HTML, CSS e JavaScript. Abaixo está um exemplo simples:
+
+### HTML:
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Aba</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Exemplo de Abas</h1>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Aba1')">Aba 1</button>
+        <button class="tablinks" onclick="openTab(event, 'Aba2')">Aba 2</button>
+        <button class="tablinks" onclick="openTab(event, 'Aba3')">Aba 3</button>
+    </div>
+
+    <div id="Aba1" class="tabcontent">
+        <h3>Aba 1</h3>
+        <p>Conteúdo da Aba 1.</p>
+    </div>
+
+    <div id="Aba2" class="tabcontent">
+        <h3>Aba 2</h3>
+        <p>Conteúdo da Aba 2.</p>
+    </div>
+
+    <div id="Aba3" class="tabcontent">
+        <h3>Aba 3</h3>
+        <p>Conteúdo da Aba 3.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### CSS (styles.css):
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tabcontent.active {
+    display: block;
+}
+```
+
+### JavaScript (script.js):
+```javascript
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    // Esconde todas as abas
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remove a classe "active" de todos os botões
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Mostra a aba atual e adiciona a classe "active" ao botão que abriu a aba
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+```
+
+### Explicação:
+- **HTML**: Define a estrutura da página, incluindo os botões para abrir as abas e o conteúdo de cada aba.
+- **CSS**: Define o estilo das abas e conteúdo, incluindo a exibição dinâmica das abas ativas.
+- **JavaScript**: Controla a lógica para mostrar o conteúdo da aba correspondente quando um botão é clicado.
+
+### Como funciona:
+1. O usuário clica em um botão (Aba 1, Aba 2, ou Aba 3).
+2. O JavaScript oculta o conteúdo de todas as abas e exibe apenas a aba correspondente ao botão clicado.
+3. O botão da aba ativa recebe uma classe "active" para destacar visualmente qual aba está aberta.
+
+Salve esses arquivos com os nomes respectivos (`index.html`, `styles.css`, e `script.js`) e abra o `index.html` no navegador para ver as abas funcionando.
+      
+
+
+
+
+
+
+
+
+
+
+
